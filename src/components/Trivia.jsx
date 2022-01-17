@@ -29,7 +29,7 @@ const Trivia = () => {
                     <div className="triviaText">
                     <button className="closeTrivia" onClick={toggleTrivia}> x </button>
                     <h2> Did you know? </h2>
-                    <h3 className="randomTrivia"> In the U.S., Childhood Food Allergies Cost Nearly US$25 Billion Every Year. </h3> 
+                    <h3 className="randomTrivia"> {trivia.text} </h3> 
                 </div>
             ) : <p className="empty"></p>}
             </div>

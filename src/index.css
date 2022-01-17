@@ -126,6 +126,15 @@ a {
 
 /* *********** random recipe styling *********** */
 
+.cardName {
+  font-size: 70%;
+  font-weight: 450;
+  flex: 2; 
+  padding: 0px 5px;
+  margin: 0px;
+  color: black;
+}
+
 .cardPhoto {
   max-width: 25%;  
   flex: 1; 
@@ -138,38 +147,38 @@ a {
   flex: 1;
 }
 
-.quickInfo {
-  flex: 2.5;
+.centeredCon {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.quickInfo h4 {
-  font-size: 10%;
-  flex: 2;
+.quickInfo {
+  flex: 2.5;
   display: flex; 
   align-items: flex-start;
-  padding-left: 5px;
+  justify-content: flex-start;
 }
 
 .randomRecipes {
   width: 100vw; 
-  display: flex; 
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin: 10px;
+  display: flex;
 }
 
 .recipeCard {
-  width: 90%;
-  height: 115px;
+  width: 95%; 
   display: flex; 
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start; 
   border: 1px solid rgb(227, 227, 227);
-  border-radius: 5px;
-  overflow: hidden;
-  padding: 10px; 
-  margin: 5px; 
+  box-shadow: 2px 2px 6px rgb(102, 101, 101);
+  border-radius: 2px;
+  overflow: hidden; 
+  margin: 10px 5px 10px 5px ; 
+}
+
+a {
+  margin: 0px; 
+  padding: 0px;
 }

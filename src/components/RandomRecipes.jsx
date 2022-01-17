@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import wineCheese from '../static/wine&cheese.jpg'
 
@@ -9,23 +10,25 @@ const RandomRecipes = (props) => {
     return (
         <div>
 
-            <div className="">
+            <div className="randomRecipes">
                 {Object.keys(randomRecipes).map((key) => {
                     return (
-                        <div key={key}>
+                        <div key={key} className="centeredCon">
                             {randomRecipes[key].map((dataItem, i) => {
                                 return (
-                                    <div className="randomRecipes" key={i}>
-                                        <img className="cardPhoto" src={dataItem.image} alt="recipe photo" />
-                                        <div className="quickInfo">
-                                            <h4> {dataItem.title} </h4>
-                                            <div className="cardSidebar">
-                                                <p> Time: {dataItem.readyInMinutes} mins </p>
-                                                <p> Servings: {dataItem.servings} </p>
-                                            </div>
+                                    <Link to={`/${dataItem.id}`} >
+                                        <div className="recipeCard" key={i}>
+                                            <img className="cardPhoto" src={dataItem.image} alt="No Photo" />
+                                            <div className="quickInfo">
+                                                <h4 className="cardName"> {dataItem.title} </h4>
+                                                <div className="cardSidebar">
+                                                    <p> Time: {dataItem.readyInMinutes} mins </p>
+                                                    <p> Servings: {dataItem.servings} </p>
+                                                </div>
 
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 )
                             })}
                         </div>

@@ -12,7 +12,7 @@ const Main = (props) => {
             <Nav />
             <Trivia />
             <div className="heading1">
-                <h2> Try these recipes... </h2>
+                <h2> Try something new... </h2>
             </div>
             <RandomRecipes randomRecipes={randomRecipes}/>
         </div>

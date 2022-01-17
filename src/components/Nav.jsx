@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import search from '../static/search.png'
 import Hamburger from './Hamburger'
 
@@ -13,10 +14,12 @@ const Nav = () => {
         <div className="container">
             <div className="topnav">
                 <img src={search} alt="search icon" />
-                <a href="#home" className="name">ZESTY</a>
+                <Link to="/">
+                    <a href="#home" className="name">ZESTY</a>
+                </Link>
                 <div className="hamburger" onClick={toggleHamburger}>
-                        <Hamburger isOpen={isOpen}/>
-                    </div>
+                    <Hamburger isOpen={isOpen} />
+                </div>
             </div>
             {isOpen ? (
                 <div className="myLinks">
@@ -24,7 +27,7 @@ const Nav = () => {
                     <a href="#contact">Contact</a>
                     <a href="#about">About</a>
                 </div>
-            ) : <p className="empty"></p>} 
+            ) : <p className="empty"></p>}
         </div>
     )
 }
