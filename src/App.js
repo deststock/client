@@ -1,7 +1,9 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import Main from './views/Main'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import axios from 'axios';
+import Main from './views/Main'
+import OneRecipe from './views/OneRecipe'
 
 function App() {
 
@@ -19,9 +21,17 @@ function App() {
 
 
   return (
-    <div className="App">
-      {loaded && <Main randomRecipes={randomRecipes}/>}
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" >
+          {loaded && <Main randomRecipes={randomRecipes} />}
+        </Route>
+        <Route exact path="/:id">
+          <OneRecipe />
+        </Route>
+      </Switch> 
+    
+    </BrowserRouter >
   );
 }
 
