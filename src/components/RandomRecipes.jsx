@@ -16,7 +16,7 @@ const RandomRecipes = (props) => {
                         <div key={key} className="centeredCon">
                             {randomRecipes[key].map((dataItem, i) => {
                                 return (
-                                    <Link to={`/${dataItem.id}`} >
+                                    <Link to={`/${dataItem.id}`} key={i}>
                                         <div className="recipeCard" key={i}>
                                             <img className="cardPhoto" src={dataItem.image} alt="No Photo" />
                                             <div className="quickInfo">

@@ -11,9 +11,8 @@ function App() {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    axios.get("https://api.spoonacular.com/recipes/random?number=50&apiKey=571f972a0cf64eca93ee18572cb11b33")
+    axios.get("https://api.spoonacular.com/recipes/random?number=20&apiKey=571f972a0cf64eca93ee18572cb11b33")
       .then(res => {
-      console.log(res.data)
       setRandomRecipes(res.data)
       setLoaded(true)
     })
@@ -24,7 +23,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" >
-          {loaded && <Main randomRecipes={randomRecipes} />}
+          <Main randomRecipes={randomRecipes} loaded={loaded}/>
         </Route>
         <Route exact path="/:id">
           <OneRecipe />

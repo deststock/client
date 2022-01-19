@@ -29,7 +29,7 @@ const Trivia = () => {
                     <div className="triviaText">
                     <button className="closeTrivia" onClick={toggleTrivia}> x </button>
                     <h2> Did you know? </h2>
-                    <h3 className="randomTrivia"> {trivia.text} </h3> 
+                    <h3 className="randomTrivia"> {trivia.text} The red food-coloring carmine used in Skittles and other candies is made from boiled cochineal bugs, a type of beetle. </h3> 
                 </div>
             ) : <p className="empty"></p>}
             </div>
