@@ -18,6 +18,7 @@ const OneRecipe = () => {
                 setThisRecipe(res.data)
                 setLoaded(true)
             })
+            .catch(err => console.error(err))
     }, [])
 
 
@@ -34,17 +35,18 @@ const OneRecipe = () => {
                         <p className="subtext"> Makes {thisRecipe.servings} servings </p>
                         <br />
                         <p className="instructions"> {thisRecipe.instructions} </p>
-                        {Object.keys(thisRecipe).map((key) => {
-                            return (
-                                <div key={key} >
-                                    {thisRecipe[key].map((dataItem, i) => {
-                                        return (
-                                            <p key={i}> {dataItem.name} </p>
-                                        )
-                                    })}
-                                </div>
-                            )
-                        })}
+                        <div>
+                            <h3 className='subheading'> Ingredients </h3>
+                            <ul>
+                                {thisRecipe.extendedIngredients.map((dataItem, i) => {
+                                    return (
+                                        <div>
+                                            <li key={i}>{dataItem.name}</li>
+                                        </div>
+                                    )
+                                })}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             ) :

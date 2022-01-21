@@ -199,6 +199,10 @@ a {
   font-size: 15px;
 }
 
+.subheading {
+  color:rgb(170, 222, 163);
+}
+
 .textInfo {
   padding-left: 10px; 
 }

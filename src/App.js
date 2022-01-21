@@ -13,9 +13,10 @@ function App() {
   useEffect(() => {
     axios.get("https://api.spoonacular.com/recipes/random?number=20&apiKey=571f972a0cf64eca93ee18572cb11b33")
       .then(res => {
-      setRandomRecipes(res.data)
-      setLoaded(true)
-    })
+        setRandomRecipes(res.data)
+        setLoaded(true)
+      })
+      .catch(err => console.error(err))
   }, [])
 
 
@@ -23,13 +24,13 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" >
-          <Main randomRecipes={randomRecipes} loaded={loaded}/>
+          <Main randomRecipes={randomRecipes} loaded={loaded} />
         </Route>
         <Route exact path="/:id">
           <OneRecipe />
         </Route>
-      </Switch> 
-    
+      </Switch>
+
     </BrowserRouter >
   );
 }

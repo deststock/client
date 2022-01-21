@@ -17,6 +17,7 @@ const Trivia = () => {
     //             console.log(res.data)
     //             setTrivia(res.data)
     //         })
+    //         .catch(err => console.error(err))
     // }, [])
 
     return(
