@@ -7,6 +7,7 @@ import time from '../static/time.png'
 import servings from '../static/servings.png'
 import trueIcon from '../static/trueIcon.png'
 import falseIcon from '../static/falseIcon.png'
+import noImage from '../static/noImage.jpg'
 
 
 const OneRecipe = () => {
@@ -14,7 +15,6 @@ const OneRecipe = () => {
     const { id } = useParams()
     const [thisRecipe, setThisRecipe] = useState([])
     const [loaded, setLoaded] = useState(false)
-    const [dairyFree, setDairyFree] = useState()
 
     useEffect(() => {
         axios.get('https://api.spoonacular.com/recipes/' + id + '/information?includeNutrition=false&apiKey=571f972a0cf64eca93ee18572cb11b33')
@@ -31,13 +31,15 @@ const OneRecipe = () => {
             <Nav />
             {loaded ? (
                 <div className="oneRecipeInfo">
-                    <img src={thisRecipe.image} alt="Recipe Photo" />
+                    {thisRecipe.image ? (
+                        <img src={thisRecipe.image} alt="Recipe Photo" />
+                    ) : <img src={noImage} alt="No Photo" />}
                     <div className="textInfo">
                         <h2>{thisRecipe.title}</h2>
                         <div className="recipeStats">
                             <div className="leftCol">
                                 <div className="stats">
-                                {thisRecipe.glutenFree ? (
+                                    {thisRecipe.glutenFree ? (
                                         <img src={trueIcon} alt="true icon" />
                                     ) : <img src={falseIcon} alt="false icon"></img>}
                                     <p className="subtext"> Gluten Free </p>
@@ -49,13 +51,13 @@ const OneRecipe = () => {
                                     <p className="subtext"> Dairy Free </p>
                                 </div>
                                 <div className="stats">
-                                {thisRecipe.vegetarian ? (
+                                    {thisRecipe.vegetarian ? (
                                         <img src={trueIcon} alt="true icon" />
                                     ) : <img src={falseIcon} alt="false icon"></img>}
                                     <p className="subtext"> Vegetarian </p>
                                 </div>
                                 <div className="stats">
-                                {thisRecipe.vegan ? (
+                                    {thisRecipe.vegan ? (
                                         <img src={trueIcon} alt="true icon" />
                                     ) : <img src={falseIcon} alt="false icon"></img>}
                                     <p className="subtext"> Vegan </p>
@@ -94,7 +96,7 @@ const OneRecipe = () => {
             ) :
                 <div className="centeredCon">
                     <br />
-                    <LoadingIcons.TailSpin stroke='rgb(170, 222, 163)' strokeWidth={2.5} />
+                    <LoadingIcons.TailSpin stroke='rgb(170, 222, 163)' strokeWidth={2.5} className='loadingIcon'/>
                 </div>
             }
         </div>

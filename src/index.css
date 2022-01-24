@@ -25,6 +25,18 @@ code {
   color:rgb(170, 222, 163);
 }
 
+/* *********** loading screen styling *********** */
+.loadingScreen {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loadingIcon {
+  margin-top: 25vh;
+}
+
+
 /* *********** navbar styling *********** */
 
 a {
@@ -84,7 +96,7 @@ a {
 .headerPhoto {
   width: 100vw;
   max-height: 30vh;
-  object-fit: cover
+  object-fit: cover;
 }
 
 .openTrivia {

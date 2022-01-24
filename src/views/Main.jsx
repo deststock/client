@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import Trivia from '../components/Trivia'
 import RandomRecipes from '../components/RandomRecipes'

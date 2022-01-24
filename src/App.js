@@ -4,11 +4,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import axios from 'axios';
 import Main from './views/Main'
 import OneRecipe from './views/OneRecipe'
+import LoadingScreen from './components/LoadingScreen'
 
 function App() {
 
   const [randomRecipes, setRandomRecipes] = useState([])
   const [loaded, setLoaded] = useState(false)
+  const [screenLoading, setScreenLoading] = useState(true)
 
   useEffect(() => {
     axios.get("https://api.spoonacular.com/recipes/random?number=20&apiKey=571f972a0cf64eca93ee18572cb11b33")
@@ -19,12 +21,18 @@ function App() {
       .catch(err => console.error(err))
   }, [])
 
+  useEffect(() => {
+    setTimeout(() => setScreenLoading(false), 6000)
+}, [])
+
 
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" >
-          <Main randomRecipes={randomRecipes} loaded={loaded} />
+          {screenLoading === false ? (
+            <Main randomRecipes={randomRecipes} loaded={loaded} />
+          ): <LoadingScreen/>}
         </Route>
         <Route exact path="/:id">
           <OneRecipe />
