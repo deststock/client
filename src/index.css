@@ -83,6 +83,8 @@ a {
 
 .headerPhoto {
   width: 100vw;
+  max-height: 30vh;
+  object-fit: cover
 }
 
 .openTrivia {
@@ -106,6 +108,14 @@ a {
   align-content: center;
 }
 
+.triviaBody {
+  border: 1px solid black; 
+  padding: 5px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-evenly;
+}
+
 .triviaText {
   display: flex;
   flex-direction: column;
@@ -117,10 +127,10 @@ a {
   left: 8%;
   position: fixed;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.5);
-  color: rgb(250, 249, 236); 
-  background-color: rgb(255, 205, 98);
+  color: black;
+  background-color: white;
 }
 
 
@@ -148,7 +158,7 @@ a {
 
 .cardSidebar {
   font-size: 10px;
-  color:rgb(170, 222, 163);
+  color: rgb(147, 191, 142);
   flex: 1;
 }
 
@@ -169,10 +179,13 @@ a {
 .randomRecipes {
   width: 100vw; 
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .recipeCard {
-  width: 95%; 
+  width: 95vw;
+  min-height: 67.05px;
   display: flex; 
   flex-direction: row;
   align-items: flex-start; 
@@ -183,7 +196,13 @@ a {
   margin: 5px; 
 }
 
-/* one recipe page styling */
+/* *********** one recipe page styling *********** */ 
+
+.instructions {
+  font-weight: 250;
+  margin: 5px !important; 
+}
+
 .oneRecipeInfo {
   display: flex;
   flex-direction: column; 
@@ -194,9 +213,31 @@ a {
   width: 100%;
 }
 
+.recipeStats {
+  display: flex; 
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 5px; 
+}
+
+.stats {
+  display: flex;  
+  align-items: center;
+}
+
+.stats img {
+  width: 25px; 
+  height: 25px;
+}
+
+.stats p {
+  padding-left: 5px; 
+}
+
 .subtext {
   font-weight: 150;
   font-size: 15px;
+  padding-left: 10px !important; 
 }
 
 .subheading {
@@ -212,6 +253,16 @@ a {
   margin: 0px; 
 }
 
-.instructions {
-  font-weight: 250;
+/* *********** bottom of page container *********** */ 
+
+.bottomCon {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 10px; 
+  color:rgb(170, 222, 163);
+}
+
+.bottomCon p { 
+  text-align: center;
 }

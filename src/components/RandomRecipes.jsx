@@ -1,5 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom' 
+import { Link } from 'react-router-dom'
+import time from '../static/time.png'
+import servings from '../static/servings.png'
 
 const RandomRecipes = (props) => {
 
@@ -20,8 +22,14 @@ const RandomRecipes = (props) => {
                                             <div className="quickInfo">
                                                 <h4 className="cardName"> {dataItem.title} </h4>
                                                 <div className="cardSidebar">
-                                                    <p> Time: {dataItem.readyInMinutes} mins </p>
-                                                    <p> Servings: {dataItem.servings} </p>
+                                                    <div className="stats">
+                                                        <img src={time} alt="time icon" />
+                                                        <p> {dataItem.readyInMinutes} mins </p>
+                                                    </div> 
+                                                    <div className="stats">
+                                                        <img src={servings} alt="servings icon" />
+                                                        <p> {dataItem.servings} </p>
+                                                    </div>
                                                 </div>
 
                                             </div>

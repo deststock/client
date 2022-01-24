@@ -16,12 +16,17 @@ const Main = (props) => {
                 <h2> Try something new... </h2>
             </div>
             {loaded ? (
-                <RandomRecipes randomRecipes={randomRecipes} />
-            ) : 
-            <div className="centeredCon">
-                <br />
-                <LoadingIcons.TailSpin stroke='rgb(170, 222, 163)' strokeWidth={2.5} />
-            </div>
+                <div>
+                    <RandomRecipes randomRecipes={randomRecipes} />
+                    <div className="bottomCon">
+                        <p> Still don't see something you like? Try searching for a recipe!</p>
+                    </div>
+                </div>
+            ) :
+                <div className="centeredCon">
+                    <br />
+                    <LoadingIcons.TailSpin stroke='rgb(170, 222, 163)' strokeWidth={2.5} />
+                </div>
             }
         </div>
     );
