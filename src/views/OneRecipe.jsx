@@ -87,6 +87,7 @@ const OneRecipe = () => {
                                 })}
                             </ul>
                         </div>
+                        <h3 className='subheading'> Directions </h3>
                         <p className="instructions"> {thisRecipe.instructions} </p>
                     </div>
                 </div>
