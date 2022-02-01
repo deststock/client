@@ -25,6 +25,11 @@ code {
   color:rgb(170, 222, 163);
 }
 
+.bottomPage {
+  width: 100vw; 
+  height: 15vh;
+}
+
 /* *********** loading screen styling *********** */
 .loadingScreen {
   object-fit: cover;
@@ -79,6 +84,41 @@ a {
   color: black;
 }
 
+/* search form styling */
+.searchBar {
+  padding: 2px; 
+  border-radius: 2%;
+  border: none;
+  width: 70%;
+  height: 20px; 
+}
+
+.searchForm {
+  position: absolute;
+  z-index: 10; 
+  padding: 5px;  
+  width: 100vw;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(170, 222, 163); 
+} 
+
+.animate__animated.animate__fadeInLeft, .animate__animated.animate__fadeInRight {
+  --animate-duration: .5s;
+}
+
+.searchSubmit { 
+  background-color: rgb(170, 222, 163); 
+  color:white;
+  border-radius: 50%;
+  border: none;
+  margin: 5px;
+  height: 24px;
+  font-size: 20px;
+}
+
 /* *********** trivia styling *********** */
 
 .closeTrivia {
@@ -120,12 +160,11 @@ a {
   align-content: center;
 }
 
-.triviaBody {
-  border: 1px solid black; 
+.triviaBody {  
   padding: 5px;
   display: flex;
   flex-direction: column; 
-  justify-content: space-evenly;
+  justify-content: space-evenly; 
 }
 
 .triviaText {
@@ -254,10 +293,11 @@ a {
 
 .subheading {
   color:rgb(170, 222, 163);
+  text-decoration: underline;
 }
 
 .textInfo {
-  padding-left: 10px; 
+  padding: 10px; 
 }
 
 .textInfo p {
@@ -272,7 +312,8 @@ a {
   align-items: center;
   justify-content: center;
   padding: 10px; 
-  color:rgb(170, 222, 163);
+  /* different color green here, not sure if this will stay */
+  color:rgb(143, 186, 137);
 }
 
 .bottomCon p { 

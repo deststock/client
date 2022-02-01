@@ -5,6 +5,7 @@ import axios from 'axios';
 import Main from './views/Main'
 import OneRecipe from './views/OneRecipe'
 import LoadingScreen from './components/LoadingScreen'
+import SearchResults from './components/SearchResults';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    setTimeout(() => setScreenLoading(false), 6000)
+    setTimeout(() => setScreenLoading(false), 4000)
 }, [])
 
 
@@ -32,6 +33,11 @@ function App() {
         <Route exact path="/" >
           {screenLoading === false ? (
             <Main randomRecipes={randomRecipes} loaded={loaded} />
+          ): <LoadingScreen/>}
+        </Route>
+        <Route exact path="/search/:search" >
+          {screenLoading === false ? (
+            <SearchResults />
           ): <LoadingScreen/>}
         </Route>
         <Route exact path="/:id">

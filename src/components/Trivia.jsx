@@ -14,7 +14,6 @@ const Trivia = () => {
     useEffect(() => {
         axios.get("https://api.spoonacular.com/food/trivia/random?apiKey=571f972a0cf64eca93ee18572cb11b33")
             .then(res => {
-                console.log(res.data)
                 setTrivia(res.data)
             })
             .catch(err => console.error(err))
@@ -27,7 +26,7 @@ const Trivia = () => {
                 <img className="headerPhoto" src={wineCheese} alt="header photo" />
                 <button className="openTrivia" onClick={toggleTrivia}> Food for thought </button>
                 {triviaOpen ? (
-                    <div className="triviaText">
+                    <div className="triviaText animate__animated animate__flipInX">
                         <div className="triviaBody">
                             <button className="closeTrivia" onClick={toggleTrivia}> x </button>
                             <div className="centeredCon">

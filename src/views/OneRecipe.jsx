@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import Nav from '../components/Nav'
 import LoadingIcons from 'react-loading-icons'
@@ -66,11 +66,11 @@ const OneRecipe = () => {
                             <div className="rightCol">
                                 <div className="stats">
                                     <img src={time} alt="time icon" />
-                                    <p className="subtext"> Ready in {thisRecipe.readyInMinutes} minutes</p>
+                                    <p className="subtext"> {thisRecipe.readyInMinutes} minutes</p>
                                 </div>
                                 <div className="stats">
                                     <img src={servings} alt="servings icon" />
-                                    <p className="subtext"> Makes {thisRecipe.servings} servings </p>
+                                    <p className="subtext"> {thisRecipe.servings} servings </p>
                                 </div>
                             </div>
                         </div>
@@ -90,13 +90,15 @@ const OneRecipe = () => {
                             </ul>
                         </div>
                         <h3 className='subheading'> Directions </h3>
-                        <p className="instructions"> {thisRecipe.instructions} </p>
+                        <p className='instructions' dangerouslySetInnerHTML={{ __html: thisRecipe.instructions }}></p>
+                    </div>
+                    <div className="bottomPage"> 
                     </div>
                 </div>
             ) :
                 <div className="centeredCon">
                     <br />
-                    <LoadingIcons.TailSpin stroke='rgb(170, 222, 163)' strokeWidth={2.5} className='loadingIcon'/>
+                    <LoadingIcons.TailSpin stroke='rgb(170, 222, 163)' strokeWidth={2.5} className='loadingIcon' />
                 </div>
             }
         </div>
