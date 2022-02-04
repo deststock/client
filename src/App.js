@@ -36,9 +36,7 @@ function App() {
           ): <LoadingScreen/>}
         </Route>
         <Route exact path="/search/:search" >
-          {screenLoading === false ? (
-            <SearchResults />
-          ): <LoadingScreen/>}
+            <SearchResults/>
         </Route>
         <Route exact path="/:id">
           <OneRecipe />

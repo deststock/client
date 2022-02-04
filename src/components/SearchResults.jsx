@@ -9,25 +9,39 @@ const SearchResults = () => {
 
     const { search } = useParams();
     const [searchResults, setSearchResults] = useState([])
+    const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
         axios.get("https://api.spoonacular.com/recipes/complexSearch?query=" + search + "&apiKey=571f972a0cf64eca93ee18572cb11b33")
-        .then(res => {
-            setSearchResults(res.data)
-            console.log(res.data)
-        })
-        .catch(err => console.error(err))
-    }, [])
-
+            .then(res => {
+                setSearchResults(res.data)
+                setLoaded(!loaded)
+            })
+            .catch(err => console.error(err))
+        }, [loaded])
+        
+        console.log(searchResults)
     return (
         <div>
-            {Object.keys(searchResults).map((recipe, key) => {
-                return (
-                    <div key={key} className="centeredCon">
-                        <p> {recipe.title} </p>
-                    </div>
-                )
-            })}
+            {loaded ? (
+                <div>
+                    <p>hi</p>
+                    {Object.keys(searchResults).map((key) => {
+                        return (
+                            <div className="centeredCon" key={key}>
+                                {/* {searchResults.results[key].map((dataItem, i) => {
+                                    return (
+                                        <div className="recipeCard" key={i}>
+                                            {dataItem.title}
+                                        </div>
+                                    )
+                                })} */}
+                                {}
+                            </div>
+                        )
+                    })}
+                </div>
+            ) : <p> loading... </p>}
         </div>
 
     )
