@@ -16,30 +16,19 @@ const SearchResults = () => {
             .then(res => {
                 setSearchResults(res.data)
                 setLoaded(!loaded)
+                console.log(res.data)
             })
             .catch(err => console.error(err))
-        }, [loaded])
-        
-        console.log(searchResults)
+        }, [])
+
     return (
         <div>
             {loaded ? (
                 <div>
                     <p>hi</p>
-                    {Object.keys(searchResults).map((key) => {
-                        return (
-                            <div className="centeredCon" key={key}>
-                                {/* {searchResults.results[key].map((dataItem, i) => {
-                                    return (
-                                        <div className="recipeCard" key={i}>
-                                            {dataItem.title}
-                                        </div>
-                                    )
-                                })} */}
-                                {}
-                            </div>
-                        )
-                    })}
+                    {searchResults.results.map((recipe, i) => {
+                        <h1 key={i}> {recipe.title} </h1>
+                        })}
                 </div>
             ) : <p> loading... </p>}
         </div>
