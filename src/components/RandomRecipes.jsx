@@ -10,7 +10,6 @@ const RandomRecipes = (props) => {
 
     return (
         <div>
-
             <div className="randomRecipes">
                 {Object.keys(randomRecipes).map((key) => {
                     return (
@@ -22,7 +21,6 @@ const RandomRecipes = (props) => {
                                             {dataItem.image ? (
                                                 <img className="cardPhoto" src={dataItem.image} alt="Recipe photo" />
                                             ) : <img className="cardPhoto" src={noImage} alt="No Photo" />}
-
                                             <div className="quickInfo">
                                                 <h4 className="cardName"> {dataItem.title} </h4>
                                                 <div className="cardSidebar">
