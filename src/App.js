@@ -5,7 +5,7 @@ import axios from 'axios';
 import Main from './views/Main'
 import OneRecipe from './views/OneRecipe'
 import LoadingScreen from './components/LoadingScreen'
-import SearchResults from './components/SearchResults';
+import SearchPage from './views/SearchPage.jsx';
 
 function App() {
 
@@ -36,10 +36,10 @@ function App() {
           ): <LoadingScreen/>}
         </Route>
         <Route exact path="/search/:search" >
-            <SearchResults/>
+            <SearchPage/>
         </Route>
         <Route exact path="/:id">
-          <OneRecipe />
+          <OneRecipe/>
         </Route>
       </Switch>
 
